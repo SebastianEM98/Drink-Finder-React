@@ -8,7 +8,7 @@ export default function () {
     const isHome = useMemo(() => pathname === '/', [pathname])
 
     return (
-        <header className="bg-slate-800">
+        <header className={isHome ? "bg-header-image" : "bg-slate-800"}>
             <div className="mx-auto container px-5 py-16">
                 <div className="flex justify-between items-center">
                     <div>
@@ -52,7 +52,7 @@ export default function () {
                                 id="ingredient"
                                 name="ingredient"
                                 className="p-3 w-full rounded-lg focus:outline-none bg-white"
-                                placeholder="Drink name or Ingredient. e.g., Vodka, Tequila, Coffee"
+                                placeholder="Drink name or Ingredient. E.g. Vodka, Tequila, Coffee"
                             />
                         </div>
 
