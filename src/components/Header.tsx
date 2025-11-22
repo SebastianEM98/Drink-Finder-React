@@ -1,11 +1,18 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { useAppStore } from "../stores/useAppStore";
 
 export default function () {
 
     const { pathname } = useLocation()
-
     const isHome = useMemo(() => pathname === '/', [pathname])
+
+    const fetchCategories = useAppStore((state) => state.fetchCategories)
+    const categories = useAppStore((state) => state.categories)
+
+    useEffect(() => {
+        fetchCategories()
+    }, [])
 
     return (
         <header className={isHome ? "bg-header-image" : "bg-slate-800"}>
@@ -70,6 +77,14 @@ export default function () {
                                 className="p-3 w-full rounded-lg bg-white"
                             >
                                 <option value="">-- Select an Option --</option>
+                                {categories?.drinks?.map(category => (
+                                    <option
+                                        key={category.strCategory}
+                                        value={category.strCategory}
+                                    >
+                                        {category.strCategory}
+                                    </option>
+                                ))}
                             </select>
                         </div>
 

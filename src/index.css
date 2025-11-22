@@ -2,7 +2,7 @@
 
 @layer components {
     .bg-header-image {
-        background: url('/public/bg.jpg') no-repeat;
+        background: url('/bg.jpg') no-repeat;
         background-size: cover;
         background-position: center;
     }
