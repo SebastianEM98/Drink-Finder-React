@@ -31,7 +31,7 @@ export default function () {
         e.preventDefault()
 
         // TO DO: notification alert
-        if(Object.values(searchFilters).includes('') || searchFilters.ingredient.trim() === '') {
+        if (Object.values(searchFilters).includes('') || searchFilters.ingredient.trim() === '') {
             console.log("All fields are required")
             return
         }

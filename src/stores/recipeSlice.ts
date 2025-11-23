@@ -38,7 +38,7 @@ export const createRecipesSlice: StateCreator<RecipesSliceType> = (set) => ({
         const selectedRecipe = await getRecipeById(id)
         set({
             selectedRecipe,
-            modal:true
+            modal: true
         })
     },
 

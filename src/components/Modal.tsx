@@ -8,6 +8,9 @@ export default function Modal() {
     const modal = useAppStore((state) => state.modal)
     const closeModal = useAppStore((state) => state.closeModal)
     const selectedRecipe = useAppStore((state) => state.selectedRecipe)
+    const handleClickFavorite = useAppStore((state) => state.handleClickFavorite)
+    const favoriteExists = useAppStore((state) => state.favoriteExists)
+
 
     const renderIngredients = () => {
         const ingredients: JSX.Element[] = []
@@ -78,7 +81,7 @@ export default function Modal() {
 
                                     <p className="text-lg">{selectedRecipe.strInstructions}</p>
 
-                                    <div className="mt-5 flex justify-between gap-4">
+                                    <div className="mt-5 flex justify-between gap-4 sm:flex-row flex-col-reverse">
                                         <button
                                             type="button"
                                             className="cursor-pointer w-full rounded bg-gray-600 p-3 font-bold uppercase text-white shadow hover:bg-gray-500 active:bg-gray-700 transition-colors duration-300"
@@ -90,8 +93,12 @@ export default function Modal() {
                                         <button
                                             type="button"
                                             className="cursor-pointer w-full rounded bg-orange-500 p-3 font-bold uppercase text-white shadow hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300"
+                                            onClick={() => {
+                                                handleClickFavorite(selectedRecipe)
+                                                closeModal()
+                                            }}
                                         >
-                                            Add to Favorites
+                                            {favoriteExists(selectedRecipe.idDrink) ? "Remove From Favorites" : "Add to Favorites"}
                                         </button>
                                     </div>
                                 </DialogPanel>
