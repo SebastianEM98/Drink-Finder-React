@@ -38,6 +38,14 @@ export default function SearchDrinkForm() {
 
         // Search Recipes
         searchRecipes(searchFilters)
+        scrollIntoRecipes()
+    }
+
+    const scrollIntoRecipes = () => {
+        setTimeout(() => {
+            const recipesSection = document.getElementById('main-section')
+            recipesSection?.scrollIntoView({ behavior: 'smooth' })
+        }, 300);
     }
 
     return (

@@ -17,7 +17,7 @@ export default function Layout() {
         <>
             <Header />
 
-            <main className="mx-auto container px-5 py-16">
+            <main className="mx-auto container px-5 py-16" id="main-section">
                 <Outlet />
             </main>
 
