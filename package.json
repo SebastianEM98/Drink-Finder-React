@@ -12,7 +12,9 @@
   "dependencies": {
     "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.2.0",
+    "@openrouter/ai-sdk-provider": "^1.2.5",
     "@tailwindcss/vite": "^4.1.17",
+    "ai": "^5.0.101",
     "axios": "^1.13.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
