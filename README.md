@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# Drink Finder (React + TypeScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Drink Finder is a cocktail and beverage search application built with **React**, **TypeScript**, and **Vite**.  
+It allows users to explore drinks fetched from **TheCocktailDB API**, view detailed recipes in a modal, and save their favorite beverages using **localStorage**.  
+The project also includes an **AI-powered recipe generator** through **OpenRouter**, enabling users to generate custom drink recipes instantly.
 
-Currently, two official plugins are available:
+A modern and responsive UI is built with **Tailwind CSS**, routes are handled with **React Router DOM**, global state is managed with **Zustand**, and API responses are validated using **Zod**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **Search drinks and cocktails** via TheCocktailDB API
+- **AI-powered drink recipe generator** using OpenRouter
+- **Save favorite drinks** with localStorage persistence
+- **View full recipes** in a modal powered by **Headless UI**
+- **SPA navigation** using React Router DOM
+- **Global state management** with **Zustand** (slice pattern)
+- **Type-safe API responses** using **Zod**
+- Responsive UI built with **Tailwind CSS**
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Technologies Used
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React**  
+- **TypeScript**  
+- **Vite** (project setup & bundler)  
+- **Tailwind CSS**  
+- **React Router DOM** (SPA routing)  
+- **Headless UI** (modal interactions)  
+- **Heroicons** (icons)  
+- **Zustand** (global state management with slice pattern)  
+- **Zod** (response schema validation)  
+- **localStorage** (favorite drinks persistence)  
+- **OpenRouter API** (AI-based recipe generation)  
+- **TheCocktailDB API** (drink data)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📦 Installation
+
+```bash
+git clone https://github.com/SebastianEM98/Drink-Finder-React.git
+cd Drink-Finder-React
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔑 Environment Variables
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Create a local environment file:
+
+```text
+VITE_OPENROUTER_KEY=your_api_key_here
 ```
+
+Replace `your_api_key_here` with your actual OpenRouter key.
+
+
+## ⚙️ Project Structure
+
+```text
+src/
+  components/
+  layouts/
+  lib/
+  pages/
+  schemas/
+  services/
+  stores/
+  types/
+```
+
+
+## 📄 License
+
+This project is licensed under the MIT License.
