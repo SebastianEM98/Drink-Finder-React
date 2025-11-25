@@ -9,7 +9,6 @@ export default function GenerateAI() {
     const recipe = useAppStore((state) => state.recipe)
     const isGenerating = useAppStore((state) => state.isGenerating)
 
-
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 

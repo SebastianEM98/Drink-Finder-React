@@ -1,6 +1,7 @@
 import type { StateCreator } from "zustand"
 import type { Recipe } from "../types"
 import { createNotificationSlice, type NotificationSliceType } from "./notificationSlice"
+import type { AISliceType } from "./aiSlice"
 
 export type FavoritesSliceType = {
     favorites: Recipe[],
@@ -9,7 +10,7 @@ export type FavoritesSliceType = {
     loadFromLocalStorage: () => void
 }
 
-export const createFavoritesSlice: StateCreator<FavoritesSliceType & NotificationSliceType, [], [], FavoritesSliceType> = (set, get, api) => ({
+export const createFavoritesSlice: StateCreator<FavoritesSliceType & NotificationSliceType & AISliceType, [], [], FavoritesSliceType> = (set, get, api) => ({
     favorites: [],
 
     handleClickFavorite: (recipe) => {

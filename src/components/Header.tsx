@@ -9,8 +9,8 @@ export default function () {
 
     return (
         <header className={isHome ? "bg-header-image" : "bg-slate-800"}>
-            <div className="mx-auto container px-5 py-16">
-                <div className="flex justify-between items-center">
+            <div className="mx-auto container px-5 sm:py-16 py-8">
+                <div className="flex justify-between items-center flex-col sm:flex-row sm:gap-0 gap-10">
                     <div>
                         <img className="w-32" src="/logo.svg" alt="logo" />
                     </div>
