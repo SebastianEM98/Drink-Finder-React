@@ -34,6 +34,16 @@ export default function () {
                         >
                             Favorites
                         </NavLink>
+
+                        <NavLink
+                            to="/generate"
+                            className={({ isActive }) => isActive ?
+                                "text-orange-500 uppercase font-bold transition-colors duration-300" :
+                                "text-white uppercase font-bold transition-colors duration-300"
+                            }
+                        >
+                            Generate with AI
+                        </NavLink>
                     </nav>
                 </div>
 
