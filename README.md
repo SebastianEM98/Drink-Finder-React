@@ -7,6 +7,13 @@ The project also includes an **AI-powered recipe generator** through **OpenRoute
 A modern and responsive UI is built with **Tailwind CSS**, routes are handled with **React Router DOM**, global state is managed with **Zustand**, and API responses are validated using **Zod**.
 
 
+## 🌐 Live Demo
+
+Check the project live on Vercel:
+
+**Live URL:** https://drink-finder-react-flax.vercel.app/
+
+
 ## 🚀 Features
 
 - **Search drinks and cocktails** via TheCocktailDB API
