@@ -1,5 +1,6 @@
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react"
 import { useAppStore } from "../stores/useAppStore"
+import { ChevronDownIcon } from "@heroicons/react/20/solid"
 
 const initStateSearchFilters = {
     searchType: '',
@@ -81,20 +82,23 @@ export default function SearchDrinkForm() {
                     Search Type:
                 </label>
 
-                <select
-                    id="searchType"
-                    name="searchType"
-                    className={
-                        `appearance-none p-3 w-full rounded-lg bg-white focus:outline-orange-800 ${searchFilters.searchType === "" ? "text-black/60" : "text-black"}`
-                    }
-                    onChange={handleChange}
-                    value={searchFilters.searchType}
-                >
-                    <option value="" disabled>-- Select an Option --</option>
-                    <option value="by-name" className="text-black">by Drink Name</option>
-                    <option value="by-ingredient" className="text-black">by Ingredient</option>
-                    <option value="by-category" className="text-black">by Category</option>
-                </select>
+                <div className="relative">
+                    <select
+                        id="searchType"
+                        name="searchType"
+                        className={
+                            `appearance-none p-3 pr-7 w-full rounded-lg bg-white focus:outline-orange-800 ${searchFilters.searchType === "" ? "text-black/60" : "text-black"}`
+                        }
+                        onChange={handleChange}
+                        value={searchFilters.searchType}
+                    >
+                        <option value="" disabled>-- Select an Option --</option>
+                        <option value="by-name" className="text-black">by Drink Name</option>
+                        <option value="by-ingredient" className="text-black">by Ingredient</option>
+                        <option value="by-category" className="text-black">by Category</option>
+                    </select>
+                    <ChevronDownIcon className="h-5 w-5 text-slate-800 pointer-events-none absolute right-1.5 top-1/2 -translate-y-1/2" />
+                </div>
             </div>
 
             {searchFilters.searchType === 'by-name' && (
@@ -148,26 +152,29 @@ export default function SearchDrinkForm() {
                         Category:
                     </label>
 
-                    <select
-                        id="category"
-                        name="category"
-                        className={
-                            `appearance-none p-3 w-full rounded-lg bg-white focus:outline-orange-800 ${searchFilters.category === "" ? "text-black/60" : "text-black"}`
-                        }
-                        onChange={handleChange}
-                        value={searchFilters.category}
-                    >
-                        <option value="" disabled>-- Select an Option --</option>
-                        {categories.drinks?.map(category => (
-                            <option
-                                key={category.strCategory}
-                                value={category.strCategory}
-                                className="text-black"
-                            >
-                                {category.strCategory}
-                            </option>
-                        ))}
-                    </select>
+                    <div className="relative">
+                        <select
+                            id="category"
+                            name="category"
+                            className={
+                                `appearance-none p-3 pr-7 w-full rounded-lg bg-white focus:outline-orange-800 ${searchFilters.category === "" ? "text-black/60" : "text-black"}`
+                            }
+                            onChange={handleChange}
+                            value={searchFilters.category}
+                        >
+                            <option value="" disabled>-- Select an Option --</option>
+                            {categories.drinks?.map(category => (
+                                <option
+                                    key={category.strCategory}
+                                    value={category.strCategory}
+                                    className="text-black"
+                                >
+                                    {category.strCategory}
+                                </option>
+                            ))}
+                        </select>
+                        <ChevronDownIcon className="h-5 w-5 text-slate-800 pointer-events-none absolute right-1.5 top-1/2 -translate-y-1/2" />
+                    </div>
                 </div>
             )}
 
