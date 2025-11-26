@@ -10,6 +10,8 @@ export const CategoriesAPIResponseSchema = z.object({
 })
 
 export const SearchFilterSchema = z.object({
+    searchType: z.string(),
+    drinkName: z.string(),
     ingredient: z.string(),
     category: z.string()
 })
