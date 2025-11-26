@@ -85,7 +85,7 @@ export default function SearchDrinkForm() {
                     id="searchType"
                     name="searchType"
                     className={
-                        `p-3 w-full rounded-lg bg-white focus:outline-orange-800 ${searchFilters.searchType === "" ? "text-black/60" : "text-black"}`
+                        `appearance-none p-3 w-full rounded-lg bg-white focus:outline-orange-800 ${searchFilters.searchType === "" ? "text-black/60" : "text-black"}`
                     }
                     onChange={handleChange}
                     value={searchFilters.searchType}
@@ -152,7 +152,7 @@ export default function SearchDrinkForm() {
                         id="category"
                         name="category"
                         className={
-                            `p-3 w-full rounded-lg bg-white focus:outline-orange-800 ${searchFilters.category === "" ? "text-black/60" : "text-black"}`
+                            `appearance-none p-3 w-full rounded-lg bg-white focus:outline-orange-800 ${searchFilters.category === "" ? "text-black/60" : "text-black"}`
                         }
                         onChange={handleChange}
                         value={searchFilters.category}
